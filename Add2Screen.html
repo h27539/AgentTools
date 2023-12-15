@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS Web App</title>
+
+    <!-- 添加到主屏幕时显示的应用图标 -->
+    <link rel="apple-touch-icon" href="00717HIyly1h2n582t4atj31p41p4dp5.jpg">
+
+    <!-- 添加到主屏幕时显示的应用标题 -->
+    <meta name="apple-mobile-web-app-title" content="微博">
+
+    <!-- 隐藏Safari导航条和工具栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- 设置Web App的显示模式，可以是standalone、fullscreen、minimal-ui，默认值为default -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- 如果需要支持添加到主屏幕的URL Scheme，请在下面添加对应的JavaScript代码 -->
+    <script>
+        // 通过JavaScript触发应用添加到主屏幕的动作
+        function addToHomeScreen() {
+            // 使用location.href打开你的URL Scheme
+            window.location.href = 'your-app-url-scheme://';
+
+            // iOS 9及以上版本可以使用下面的方式，通过尝试打开一个空白iframe来触发添加到主屏幕的动作
+            var iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = 'sinaweibo://';
+            document.body.appendChild(iframe);
+            setTimeout(function() {
+                document.body.removeChild(iframe);
+            }, 500);
+        }
+    </script>
+</head>
+<body>
+
+    <!-- 在页面加载时，可以通过调用addToHomeScreen函数来触发添加到主屏幕的动作 -->
+    <script>
+        // 在页面加载完成后调用addToHomeScreen函数
+        window.onload = function() {
+            addToHomeScreen();
+        };
+    </script>
+
+</body>
+</html>
