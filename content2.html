@@ -74,7 +74,7 @@
             // eg: mkaddtohomescreen://page/view1
             // url.host = page
             // url.path = /view2
-            if url.absoluteString.hasPrefix("mkaddtohomescreen://") {
+            if url.absoluteString.hasPrefix("sinaweibo://") {
                 // 说明是APP的URL Scheme，处理
                 
                 let targetVC = targetViewController(from: url.path)
