@@ -68,6 +68,53 @@
         element.style.display = "inline";
     }
 
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if let navController = window?.rootViewController as? UINavigationController,
+            let topController = navController.topViewController {
+            // eg: mkaddtohomescreen://page/view1
+            // url.host = page
+            // url.path = /view2
+            if url.absoluteString.hasPrefix("mkaddtohomescreen://") {
+                // 说明是APP的URL Scheme，处理
+                
+                let targetVC = targetViewController(from: url.path)
+                if targetVC != nil {
+                    // 判断当前显示的界面是否是要跳转的界面
+                    if topController.classForCoder == targetVC?.classForCoder {
+                        return true
+                    }
+                    
+                    navController.pushViewController(targetVC!, animated: true)
+                }
+                else {
+                    return true
+                }
+            }
+        }
+        return true
+    }
+
+    // 根据URL path返回要跳转的界面
+    func targetViewController(from path: String) -> UIViewController? {
+        var targetVC: UIViewController?
+        switch path {
+        // 根据URL的path跳转不同路径
+        case "/view1":
+            targetVC = Method1ViewController()
+            break
+        case "/view2":
+            targetVC = Method2ViewController()
+            break
+        case "/view3":
+            targetVC = Method3ViewController()
+            break
+        default:
+            targetVC = nil
+            break
+        }
+        return targetVC
+    }
+
     
 func addMethod2(_ sender: Any) {
         // 定义好的URL Scheme
