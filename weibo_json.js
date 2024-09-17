@@ -36,7 +36,7 @@ const mainConfig={
 	removeNextVideo:!1,
 	removePinedTrending:!0,
 	removeInterestFriendInTopic:!1,
-	removeInterestTopic:!1,
+	removeInterestTopic:!0,
 	removeInterestUser:!0,
 	removeLvZhou:!0,
 	removeSearchWindow:!0,
