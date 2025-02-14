@@ -1,0 +1,14 @@
+#!name = Google搜索重定向
+#!desc = 将Safari浏览器的Google搜索重定向
+#!author = h27539
+#!icon = https://cdn.jsdelivr.net/gh/NobyDa/mini@master/Color/Google.png
+#!date = 2025-02-14 13:00:00
+
+
+[Rewrite]
+https?:\/\/(www\.)?g\.cn 302 https://www.google.com
+^https?:\/\/(www\.)?google\.cn 302 https://www.google.com
+^https?:\/\/(www\.)?google\.cn\/search 302 https://www.google.com/search
+
+[MITM]
+hostname = www.google.cn, www.g.cn
