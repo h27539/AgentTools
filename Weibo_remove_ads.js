@@ -514,12 +514,12 @@ if (url.includes("/interface/sdk/sdkad.php")) {
                 i?.itemId === "100505_-_album" || // 我的相册
                 i?.itemId === "100505_-_like" || // 赞/收藏
                 i?.itemId === "100505_-_watchhistory" || // 浏览记录
-                i?.itemId === "100505_-_draft" // 草稿箱
+                i?.itemId === "100505_-_draft" ||// 草稿箱
                 // Ichange
                 i?.itemId === "100505_-_pay" || // 我的钱包
                 i?.itemId === "100505_-_ordercenter" || // 我的订单
                 i?.itemId === "100505_-_productcenter" || // 创作中心
-                i?.itemId === "100505_-_promote" || // 广告中心
+                i?.itemId === "100505_-_promote"  // 广告中心
             );
           }
           newItems.push(item);
@@ -533,9 +533,9 @@ if (url.includes("/interface/sdk/sdkad.php")) {
           newItems.push(item);
         } else if (itemId === "100505_-_manage2") {
           // Ichange
-          if (item?.footer) {
-            delete item.footer; // 移除面板样式
-          }
+          // if (item?.footer) {
+          //   delete item.footer; // 移除面板样式
+          // }
           if (item?.body) {
             delete item.body; // 移除框内推广
           }
@@ -588,9 +588,9 @@ if (url.includes("/interface/sdk/sdkad.php")) {
     // if (obj?.header?.data?.userInfo?.avatar_extend_info) {
     //   delete obj.header.data.userInfo.avatar_extend_info; // 头像挂件
     // }
-    if (obj?.profileSkin?.data) {
-      delete obj.profileSkin.data; // 全套个性皮肤
-    }
+    // if (obj?.profileSkin?.data) {
+    //   delete obj.profileSkin.data; // 全套个性皮肤
+    // }
     if (obj?.footer?.data) {
       let toolbar = obj.footer.data.toolbar_menus_new;
       // 底部菜单项目
@@ -1377,9 +1377,9 @@ function isAd(data) {
 // 移除头像挂件,关注按钮
 // Ichange
 function removeAvatar(data) {
-  if (data?.block_card_bg) {
-    delete data.block_card_bg;
-  }
+  // if (data?.block_card_bg) {
+  //   delete data.block_card_bg;
+  // }
   if (data?.buttons) {
     delete data.buttons;
   }
@@ -1392,15 +1392,15 @@ function removeAvatar(data) {
   if (data?.mblog_buttons) {
     delete data.mblog_buttons; // 转发按钮图标
   }
-  if (data?.pic_bg_new) {
-    delete data.pic_bg_new;
-  }
-  if (data?.user?.avatargj_id) {
-    delete data.user.avatargj_id;
-  }
-  if (data?.user?.avatar_extend_info) {
-    delete data.user.avatar_extend_info;
-  }
+  // if (data?.pic_bg_new) {
+  //   delete data.pic_bg_new;
+  // }
+  // if (data?.user?.avatargj_id) {
+  //   delete data.user.avatargj_id;
+  // }
+  // if (data?.user?.avatar_extend_info) {
+  //   delete data.user.avatar_extend_info;
+  // }
   if (data?.user?.cardid) {
     delete data.user.cardid;
   }
