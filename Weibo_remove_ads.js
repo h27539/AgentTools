@@ -533,9 +533,9 @@ if (url.includes("/interface/sdk/sdkad.php")) {
           newItems.push(item);
         } else if (itemId === "100505_-_manage2") {
           // Ichange
-          // if (item?.footer) {
-          //   delete item.footer; // 移除面板样式
-          // }
+          if (item?.footer) {
+            delete item.footer; // 移除面板样式
+          }
           if (item?.body) {
             delete item.body; // 移除框内推广
           }
