@@ -1377,36 +1377,36 @@ function isAd(data) {
 // 移除头像挂件,关注按钮
 // Ichange
 function removeAvatar(data) {
-  // if (data?.block_card_bg) {
-  //   delete data.block_card_bg;
-  // }
+  if (data?.block_card_bg) {
+    delete data.block_card_bg;
+  }
   if (data?.buttons) {
     delete data.buttons;
   }
   if (data?.cardid) {
     delete data.cardid;
   }
-  // if (data?.icons) {
-  //   delete data.icons;
-  // }
+  if (data?.icons) {
+    delete data.icons;
+  }
   if (data?.mblog_buttons) {
     delete data.mblog_buttons; // 转发按钮图标
   }
-  // if (data?.pic_bg_new) {
-  //   delete data.pic_bg_new;
-  // }
+  if (data?.pic_bg_new) {
+    delete data.pic_bg_new;
+  }
   if (data?.user?.avatargj_id) {
     delete data.user.avatargj_id;
   }
   if (data?.user?.avatar_extend_info) {
     delete data.user.avatar_extend_info;
   }
-  // if (data?.user?.cardid) {
-  //   delete data.user.cardid;
-  // }
-  // if (data?.user?.icons) {
-  //   delete data.user.icons;
-  // }
+  if (data?.user?.cardid) {
+    delete data.user.cardid;
+  }
+  if (data?.user?.icons) {
+    delete data.user.icons;
+  }
   // if (data?.user?.mbtype) {
   //   delete data.user.mbtype; // 会员等级图标
   // }
