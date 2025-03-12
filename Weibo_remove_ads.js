@@ -588,9 +588,9 @@ if (url.includes("/interface/sdk/sdkad.php")) {
     // if (obj?.header?.data?.userInfo?.avatar_extend_info) {
     //   delete obj.header.data.userInfo.avatar_extend_info; // 头像挂件
     // }
-    // if (obj?.profileSkin?.data) {
-    //   delete obj.profileSkin.data; // 全套个性皮肤
-    // }
+    if (obj?.profileSkin?.data) {
+      delete obj.profileSkin.data; // 全套个性皮肤
+    }
     if (obj?.footer?.data) {
       let toolbar = obj.footer.data.toolbar_menus_new;
       // 底部菜单项目
