@@ -543,6 +543,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
         } else if (itemId === "100505_-_chaohua" || itemId === "100505_-_recentlyuser") {
           newItems.push(item);
         } else {
+          console.log(i.itemId);
           // 移除其他推广
           continue;
         }
