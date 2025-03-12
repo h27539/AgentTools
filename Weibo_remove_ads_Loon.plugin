@@ -35,7 +35,7 @@ DOMAIN-SUFFIX,biz.weibo.com,REJECT
 ^https:\/\/api\.weibo\.cn\/2\/vote\/get_vote_detail\? reject-dict
 ^https:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch\? reject-dict
 ^https:\/\/api\.weibo\.cn\/2\/!\/huati\/(?:discovery_home_bottom_getdotinfo|mobile_discovery_searchchange) reject-dict
-# ^https:\/\/api\.weibo\.cn\/2\/!\/wbox\/\w+\/(?:home_bottom_modal|interest_category) reject-dict
+^https:\/\/api\.weibo\.cn\/2\/!\/wbox\/\w+\/(?:home_bottom_modal|interest_category) reject-dict
 
 # 发现页,热门微博信息流,搜索列表,热搜提醒,猜你想搜,视频流红包
 ^https:\/\/api\.weibo\.cn\/2\/search\/container_discover\? reject-dict
