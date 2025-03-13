@@ -1442,9 +1442,9 @@ function removeVoteInfo(item) {
 }
 
 const mainConfig = {
-  profileSkin = ["https://s1.ax1x.com/2023/07/28/pCxH8Ts.png","https://s1.ax1x.com/2023/07/28/pCxhTzQ.png","https://s1.ax1x.com/2023/07/28/pCxH1mQ.png","https://s1.ax1x.com/2023/07/28/pCxhoRg.png","https://s1.ax1x.com/2023/07/28/pCxHM6S.png","https://s1.ax1x.com/2023/07/28/pCxHQOg.png","https://s1.ax1x.com/2023/07/28/pCxH3wj.png","https://s1.ax1x.com/2023/07/28/pCxHJkn.png"],
-  tabIconVersion:139,
-  tabIconPath:"http://5b0988e595225.cdn.sohucs.com/skin-hebe.zip"
+  profileSkin: ["https://s1.ax1x.com/2023/07/28/pCxH8Ts.png","https://s1.ax1x.com/2023/07/28/pCxhTzQ.png","https://s1.ax1x.com/2023/07/28/pCxH1mQ.png","https://s1.ax1x.com/2023/07/28/pCxhoRg.png","https://s1.ax1x.com/2023/07/28/pCxHM6S.png","https://s1.ax1x.com/2023/07/28/pCxHQOg.png","https://s1.ax1x.com/2023/07/28/pCxH3wj.png","https://s1.ax1x.com/2023/07/28/pCxHJkn.png"],
+  tabIconVersion: 139,
+  tabIconPath: "http://5b0988e595225.cdn.sohucs.com/skin-hebe.zip"
 }
 
 function updateProfileSkin(item, k) {
