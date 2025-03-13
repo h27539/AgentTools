@@ -590,9 +590,10 @@ if (url.includes("/interface/sdk/sdkad.php")) {
     // if (obj?.header?.data?.userInfo?.avatar_extend_info) {
     //   delete obj.header.data.userInfo.avatar_extend_info; // 头像挂件
     // }
-    // if (obj?.profileSkin?.data) {
-    //   delete obj.profileSkin.data; // 全套个性皮肤
-    // }
+    if (obj?.profileSkin?.data) {
+      console.log("obj.profileSkin.data" + obj.profileSkin.data);
+      // delete obj.profileSkin.data; // 全套个性皮肤
+    }
     if (obj?.footer?.data) {
       let toolbar = obj.footer.data.toolbar_menus_new;
       // 底部菜单项目
@@ -1389,9 +1390,9 @@ function removeAvatar(data) {
   if (data?.cardid) {
     delete data.cardid;
   }
-  if (data?.icons) {
-    delete data.icons;
-  }
+  // if (data?.icons) {
+  //   delete data.icons;
+  // }
   if (data?.mblog_buttons) {
     delete data.mblog_buttons; // 转发按钮图标
   }
@@ -1407,9 +1408,9 @@ function removeAvatar(data) {
   if (data?.user?.cardid) {
     delete data.user.cardid;
   }
-  // if (data?.user?.icons) {
-  //   delete data.user.icons;
-  // }
+  if (data?.user?.icons) {  // 昵称后的小图标？
+    delete data.user.icons;
+  }
   // if (data?.user?.mbtype) {
   //   delete data.user.mbtype; // 会员等级图标
   // }
