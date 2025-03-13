@@ -131,18 +131,19 @@ if (url.includes("/interface/sdk/sdkad.php")) {
       for (let item of obj.datas) {
         if (item?.data) {
           if (!isAd(item?.data)) {
-            if (item?.data?.comment_bubble) {
-              delete item.data.comment_bubble; // 评论气泡
-            }
-            if (item?.data?.comment_bullet_screens_message) {
-              delete item.data.comment_bullet_screens_message; // 评论弹幕
-            }
-            if (item?.data?.hot_icon) {
-              delete item.data.hot_icon; // 热评小图标 弹幕 首评
-            }
-            if (item?.data?.vip_button) {
-              delete item.data.vip_button; // 会员气泡按钮
-            }
+            // Ichange
+            // if (item?.data?.comment_bubble) {
+            //   delete item.data.comment_bubble; // 评论气泡
+            // }
+            // if (item?.data?.comment_bullet_screens_message) {
+            //   delete item.data.comment_bullet_screens_message; // 评论弹幕
+            // }
+            // if (item?.data?.hot_icon) {
+            //   delete item.data.hot_icon; // 热评小图标 弹幕 首评
+            // }
+            // if (item?.data?.vip_button) {
+            //   delete item.data.vip_button; // 会员气泡按钮
+            // }
             // 微博伪装评论
             if (item?.data?.user) {
               removeAvatar(item?.data); // 头像挂件,关注按钮
@@ -166,21 +167,22 @@ if (url.includes("/interface/sdk/sdkad.php")) {
       let newItems = [];
       for (let item of obj.root_comments) {
         if (!isAd(item)) {
-          if (item?.comment_bubble) {
-            delete item.comment_bubble; // 评论气泡 新版本
-          }
-          if (item?.data?.comment_bubble) {
-            delete item.data.comment_bubble; // 评论气泡
-          }
-          if (item?.data?.comment_bullet_screens_message) {
-            delete item.data.comment_bullet_screens_message; // 评论弹幕
-          }
-          if (item?.data?.hot_icon) {
-            delete item.data.hot_icon; // 热评小图标 弹幕 首评
-          }
-          if (item?.data?.vip_button) {
-            delete item.data.vip_button; // 会员气泡按钮
-          }
+          // Ichange
+          // if (item?.comment_bubble) {
+          //   delete item.comment_bubble; // 评论气泡 新版本
+          // }
+          // if (item?.data?.comment_bubble) {
+          //   delete item.data.comment_bubble; // 评论气泡
+          // }
+          // if (item?.data?.comment_bullet_screens_message) {
+          //   delete item.data.comment_bullet_screens_message; // 评论弹幕
+          // }
+          // if (item?.data?.hot_icon) {
+          //   delete item.data.hot_icon; // 热评小图标 弹幕 首评
+          // }
+          // if (item?.data?.vip_button) {
+          //   delete item.data.vip_button; // 会员气泡按钮
+          // }
           // 微博伪装评论
           if (item.user) {
             removeAvatar(item); // 头像挂件,关注按钮
@@ -390,7 +392,10 @@ if (url.includes("/interface/sdk/sdkad.php")) {
             if ([58, 216]?.includes(item?.data?.card_type)) {
               if (/没有公开博文，为你推荐以下精彩内容/.test(item?.data?.name)) {
                 // 个人微博页刷完后的推荐信息流
-                continue;
+                // Ichange
+                // continue;
+                // break;
+                delete item.data.name;
               }
             }
             newItems.push(item);
@@ -640,9 +645,9 @@ if (url.includes("/interface/sdk/sdkad.php")) {
     if (obj?.loginconfig) {
       delete obj.loginconfig; // 登录领红包
     }
-    if (obj?.profile_lotties) {
-      delete obj.profile_lotties; // 个人主页头像挂件素材
-    }
+    // if (obj?.profile_lotties) {
+    //   delete obj.profile_lotties; // 个人主页头像挂件素材
+    // }
     if (obj?.ug_red_paper) {
       delete obj.ug_red_paper; // 可能是首页签到弹窗
     }
@@ -1426,9 +1431,9 @@ function removeFeedAd(item) {
   if (item?.common_struct) {
     delete item.common_struct; // 商品橱窗
   }
-  if (item?.comment_summary) {
-    delete item.comment_summary; // 移除信息流中的热评
-  }
+  // if (item?.comment_summary) {
+  //   delete item.comment_summary; // 移除信息流中的热评
+  // }
   if (item?.semantic_brand_params) {
     delete item.semantic_brand_params; // 商品橱窗
   }
