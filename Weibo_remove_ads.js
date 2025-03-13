@@ -523,7 +523,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
                 i?.itemId === "100505_-_promote"  // 广告中心
             );
           }
-          updateProfileSkin(item, 'profileSkin1');
+          updateProfileSkin(item, 'profileSkin');
           newItems.push(item);
         } else if (itemId === "100505_-_manage") {
           if (item?.style) {
@@ -1450,7 +1450,7 @@ const mainConfig = {
 function updateProfileSkin(item, k) {
   try {
     // 用户页：自定义 我的相册 - 客服 8个图标（需要8项），如果不需要设置为profileSkin1: null
-    let profileSkin = mainConfig['profileSkin'];
+    let profileSkin = mainConfig[k];
     if(!profileSkin) {return;}
     let i = 0;
     for (let d of item.items) {

@@ -1,0 +1,16 @@
+#!name=微博换皮肤
+#!desc=过滤微博广告及去除各部分推广模块(h27539自定义)
+#!openUrl=https://apps.apple.com/app/id350962117
+#!author=RuCu6[https://github.com/RuCu6],zmqcherish[https://github.com/zmqcherish]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/weiboad.png
+#!date=2025-03-12 16:26:00
+
+[Script]
+http-response ^https://new.vip.weibo.cn/littleskin/preview script-path=https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_main.js,requires-body=true,tag=111
+
+http-response ^https://api.weibo.cn/2/!/client/light_skin script-path=https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_main.js,requires-body=true,tag=222
