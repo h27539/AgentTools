@@ -122,7 +122,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
   } else if (url.includes("/2/client/publisher_list")) {
     // 首页右上角按钮
     if (obj?.elements?.length > 0) {
-      obj.elements = obj.elements.filter((i) => ["写微博", "图片", "视频"]?.includes(i?.app_name));
+      obj.elements = obj.elements.filter((i) => ["写微博", "相册", "视频"]?.includes(i?.app_name));
     }
   } else if (url.includes("/2/comments/build_comments")) {
     // 评论区
@@ -318,9 +318,10 @@ if (url.includes("/interface/sdk/sdkad.php")) {
                     } else {
                       continue;
                     }
-                    if (ii?.title === "最新微博") {
-                      ii.title = "微博";
-                    }
+                    // Ichange
+                    // if (ii?.title === "最新微博") {
+                    //   ii.title = "微博";
+                    // }
                   }
                   i.pageDatas = newII;
                 }
@@ -1288,10 +1289,11 @@ if (url.includes("/interface/sdk/sdkad.php")) {
       obj.status.video_info.float_info = {};
     }
   } else if (url.includes("/2/video/tiny_stream_video_list")) {
-    if (obj?.statuses?.length > 0) {
-      obj.statuses = []; // 移除视频自动连播
-      // obj.statuses = obj.statuses.filter((m) => !(m?.mblogtypename === "广告"));
-    }
+    // Ichange
+    // if (obj?.statuses?.length > 0) {
+    //   obj.statuses = []; // 移除视频自动连播
+    //   // obj.statuses = obj.statuses.filter((m) => !(m?.mblogtypename === "广告"));
+    // }
     if (obj?.tab_list?.length > 0) {
       obj.tab_list = [];
     }
@@ -1405,9 +1407,9 @@ function removeAvatar(data) {
   if (data?.user?.cardid) {
     delete data.user.cardid;
   }
-  if (data?.user?.icons) {
-    delete data.user.icons;
-  }
+  // if (data?.user?.icons) {
+  //   delete data.user.icons;
+  // }
   // if (data?.user?.mbtype) {
   //   delete data.user.mbtype; // 会员等级图标
   // }
