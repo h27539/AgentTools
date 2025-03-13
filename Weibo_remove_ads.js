@@ -523,6 +523,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
                 i?.itemId === "100505_-_promote"  // 广告中心
             );
           }
+          updateProfileSkin(item, 'profileSkin1');
           newItems.push(item);
         } else if (itemId === "100505_-_manage") {
           if (item?.style) {
@@ -1438,4 +1439,32 @@ function removeVoteInfo(item) {
   // if (item?.page_info?.media_info?.vote_info) {
   //   delete item.page_info.media_info.vote_info;
   // }
+}
+
+function updateProfileSkin(item, k) {
+  try {
+    let profileSkin = ["https://s1.ax1x.com/2023/07/28/pCxH8Ts.png","https://s1.ax1x.com/2023/07/28/pCxhTzQ.png","https://s1.ax1x.com/2023/07/28/pCxH1mQ.png","https://s1.ax1x.com/2023/07/28/pCxhoRg.png","https://s1.ax1x.com/2023/07/28/pCxHM6S.png","https://s1.ax1x.com/2023/07/28/pCxHQOg.png","https://s1.ax1x.com/2023/07/28/pCxH3wj.png","https://s1.ax1x.com/2023/07/28/pCxHJkn.png"];
+    if(!profileSkin) {return;}
+    let i = 0;
+    for (let d of item.items) {
+      if(!d.image) {
+        continue;
+      }
+      try {
+        dm = d.image.style.darkMode
+        if(dm != 'alpha') {
+          d.image.style.darkMode = 'alpha'
+        }
+        d.image.iconUrl = profileSkin[i++];
+        if(d.dot) {
+          d.dot = [];
+        }
+      } catch (error) {
+        
+      }
+    }
+    log('updateProfileSkin success');
+  } catch (error) {
+    console.log('updateProfileSkin fail');
+  }
 }
