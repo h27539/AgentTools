@@ -1450,7 +1450,7 @@ const mainConfig = {
 function updateProfileSkin(item, k) {
   try {
     // 用户页：自定义 我的相册 - 客服 8个图标（需要8项），如果不需要设置为profileSkin1: null
-    let profileSkin = mainConfig[k];
+    let profileSkin = ["https://s1.ax1x.com/2023/07/28/pCxH8Ts.png","https://s1.ax1x.com/2023/07/28/pCxhTzQ.png","https://s1.ax1x.com/2023/07/28/pCxH1mQ.png","https://s1.ax1x.com/2023/07/28/pCxhoRg.png","https://s1.ax1x.com/2023/07/28/pCxHM6S.png","https://s1.ax1x.com/2023/07/28/pCxHQOg.png","https://s1.ax1x.com/2023/07/28/pCxH3wj.png","https://s1.ax1x.com/2023/07/28/pCxHJkn.png"];
     console.log(profileSkin);
     if(!profileSkin) {return;}
     let i = 0;
@@ -1478,26 +1478,26 @@ function updateProfileSkin(item, k) {
   }
 }
 
-// function tabSkinHandler(data) {
-//   try {
-//     let iconVersion = mainConfig.tabIconVersion;
-//     data['data']['canUse'] = 1
-//     if(!iconVersion || !mainConfig.tabIconPath) return;
-//     if(iconVersion < 100) return;
+function tabSkinHandler(data) {
+  try {
+    let iconVersion = mainConfig.tabIconVersion;
+    data['data']['canUse'] = 1
+    if(!iconVersion || !mainConfig.tabIconPath) return;
+    if(iconVersion < 100) return;
 
-//     let skinList = data['data']['list']
-//     for (let skin of skinList) {
-//       // if(skin.usetime) {
-//       //  skin['usetime'] = 330
-//       // }
-//       skin['version'] = iconVersion;
-//       skin['downloadlink'] = mainConfig.tabIconPath;
-//     }
-//     console.log('tabSkinHandler success')
-//   } catch (error) {
-//     console.log('tabSkinHandler fail')
-//   }
-// }
+    let skinList = data['data']['list']
+    for (let skin of skinList) {
+      // if(skin.usetime) {
+      //  skin['usetime'] = 330
+      // }
+      skin['version'] = iconVersion;
+      skin['downloadlink'] = mainConfig.tabIconPath;
+    }
+    console.log('tabSkinHandler success')
+  } catch (error) {
+    console.log('tabSkinHandler fail')
+  }
+}
 
 
 
