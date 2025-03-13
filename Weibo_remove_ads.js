@@ -1470,9 +1470,10 @@ function updateProfileSkin(item, k) {
         
       }
     }
-    log('updateProfileSkin success');
+    console.log('updateProfileSkin success');
   } catch (error) {
     console.log('updateProfileSkin fail');
+    console.log(error);
   }
 }
 
@@ -1491,9 +1492,9 @@ function tabSkinHandler(data) {
       skin['version'] = iconVersion;
       skin['downloadlink'] = mainConfig.tabIconPath;
     }
-    log('tabSkinHandler success')
+    console.log('tabSkinHandler success')
   } catch (error) {
-    log('tabSkinHandler fail')
+    console.log('tabSkinHandler fail')
   }
 }
 
