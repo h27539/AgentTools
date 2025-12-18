@@ -39,7 +39,7 @@ const mainConfig={
 	removeInterestTopic:!1,
 	removeInterestUser:!0,
 	removeLvZhou:!0,
-	removeSearchWindow:!0,
+	removeSearchWindow:!1,
 	profileSkin1: ["https://s1.ax1x.com/2023/07/28/pCxH8Ts.png","https://s1.ax1x.com/2023/07/28/pCxhTzQ.png","https://s1.ax1x.com/2023/07/28/pCxH1mQ.png","https://s1.ax1x.com/2023/07/28/pCxhoRg.png","https://s1.ax1x.com/2023/07/28/pCxHM6S.png","https://s1.ax1x.com/2023/07/28/pCxHQOg.png","https://s1.ax1x.com/2023/07/28/pCxH3wj.png","https://s1.ax1x.com/2023/07/28/pCxHJkn.png"],
 	//用户页：自定义 我的相册 - 客服 8个图标（需要8项），如果不需要设置为profileSkin1: null
 
